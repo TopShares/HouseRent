@@ -75,6 +75,12 @@ for i in range(1, int(allPage[0])+1):
     # TODO use xpath
     # 
 
+
+    ele = html.xpath('///*[@id="book-search-results"]/div[1]/section/h4/text()')
+    e = str(ele[0]).split("日")
+
+
+    
 '''
     soup = BeautifulSoup(html,'html.parser')
     title=soup.find_all('h1',attrs={'class':'text-ellipsis'})
