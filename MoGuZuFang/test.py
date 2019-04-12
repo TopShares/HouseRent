@@ -1,5 +1,5 @@
 import requests
-
+import re
 import js2py
 
 url = 'http://www.mgzf.com'
@@ -17,6 +17,9 @@ r = requests.get(url, headers=headers)
 cookies = requests.cookies.RequestsCookieJar()
 cookies.update(r.cookies)
 print(cookies)
+with open('get_sc_v2','w')as f:
+    f.write(r.text)
+exit()
 
 
 # call Page JS function
@@ -29,22 +32,13 @@ def get_des_psswd(data, key):
 
 
 def get_js(html):
-	js = re.compile('<script>([\s\S]*?)</scipt>')
-	jsFunction = re.findall(pattern, html)
-    return jsFunction
+    js = re.compile("arg1='([\s\S]*?)';'")
+    jsFunction = re.findall(pattern, html)
+    return jsFunction[0]
+
+get_js(html)
 
 
-if __name__ == '__main__':
-    print(get_des_psswd('123456', 'RUY2OTdCRUFFRTg0OUQ0Q0E0ODNDRDMxN0YzOEEzREQudG9tY2F0OTQ='))
-
-
-
-
-exit()
-res = requests.get(url, headers=headers, cookies=cookies)
-print(res.cookies)
-with open('r','w') as f:
-	f.write(res.text)
 exit()
 
 
