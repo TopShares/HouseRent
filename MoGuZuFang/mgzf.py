@@ -124,7 +124,7 @@ class Get_infor():
 
 def test():
     work=Get_infor()
-    work.run(useLocal=True)
+    work.run(useLocal=False)
     print('OK')
 
 if __name__=='__main__':
