@@ -17,8 +17,8 @@ class Get_infor():
         }
         self.URL = 'http://www.mgzf.com/'
         self.cookies = {
-            'acw_sc__v2': '5cb14736d055f7037c17897869726a2e79e0f6b2',
-            'acw_sc__v3': '5cb14736989e4e0b9bf1f4b71a826cc8acd90c77',
+            'acw_sc__v2': '5cce312fcf0e64db98c5042c7515bbe49b5096a5',
+            'acw_sc__v3': '5cce313173ac998ff6f7a58a7bad839e3ef2a055',
         }
         self.start_url = self.URL + 'list/pg1/'
         self.folder = './SH/'
@@ -28,7 +28,7 @@ class Get_infor():
         self.shape_list=[]#户型面积列表
         self.money_list=[]#价格列表
         self.href_list=[]#链接列表
-        self.detail_list =[] #详细  
+        self.detail_list =[]#详细  
 
     def getHTMLText(self, url):
         try:
