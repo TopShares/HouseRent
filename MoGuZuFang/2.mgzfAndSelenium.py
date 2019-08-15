@@ -7,19 +7,13 @@ import pandas as pd
 import time
 import os
 
-'''
-Cookie 需手动输入
-'''
+
 class Get_infor():
     def __init__(self):
         self.headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0',' WOW64) AppleWebKit/537.cipg (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36"
         }
-        self.URL = 'http://www.mgzf.com/'
-        self.cookies = {
-            'acw_sc__v2': '5d40e64dfa5999b217bc56ba7754987954f984d4',  # 手动输入
-            'acw_sc__v3': '5d40e64e39dc2231da26117fbd24cadf78b0ee81',  # 手动输入
-        }
+        self.URL = 'http://www.mgzf.com/' 
         self.start_url = self.URL + 'list/pg1/'
         self.folder = './SH/'
     
@@ -29,17 +23,6 @@ class Get_infor():
         self.money_list=[]#价格列表
         self.href_list=[]#链接列表
         self.detail_list =[]#详细  
-
-    def getHTMLText(self, url):
-        try:
-            r = requests.get(url, headers=self.headers, cookies=self.cookies)
-            r.raise_for_status()
-            if r.status_code == 200:  # ok
-                return r.text
-            else:
-                return None
-        except:
-            return None
 
 
     def run(self, useLocal=False):
